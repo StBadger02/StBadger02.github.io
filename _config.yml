@@ -278,6 +278,14 @@ defaults:
       path: "files/CV-Tianle Chen-26.6.pdf"
     values:
       sitemap: false
+  # 5.7 MB Quarto render, not wanted in search. The file itself carries
+  # <meta name="robots" content="noindex, follow"> - dropping it from the
+  # sitemap alone would not stop indexing, since it is linked from
+  # /projects/monte-carlo-samplers/.
+  - scope:
+      path: "files/663project.html"
+    values:
+      sitemap: false
 
 # Sass/SCSS
 sass:
