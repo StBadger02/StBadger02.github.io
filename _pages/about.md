@@ -7,8 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-Hello!/Guten Tag!/你好！
+Steven Tianle Chen (陈天乐)
 ======
+
+Hello!/Guten Tag!/你好！
 
 I am a Master of Statistical Science student at Duke University. I graduated from the University of Wisconsin–Madison in December 2024 with a B.S. in Mathematics and Statistics. My academic interests lie at the intersection of machine learning, deep learning, Bayesian statistics, and computational methodology.
 
