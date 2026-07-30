@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: ""
+description: "M.S. Statistical Science student at Duke University, previously B.S. Mathematics and Statistics at UW–Madison. Machine learning, Bayesian statistics, and statistical computing."
 author_profile: true
 redirect_from: 
   - /about/

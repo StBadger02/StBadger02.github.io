@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Steven Tianle Chen"
 title_separator          : "-"
 name                     : &name "Steven Tianle Chen <br> (陈天乐)"
-description              : &description "M.S. Statistical Science@Duke <br> B.S. Math&Stats@UW-Madison"
+description              : &description "M.S. Statistical Science@Duke <br> B.S. Math &amp; Stats@UW–Madison"
 url                      : https://www.sttlchen.com # must match the CNAME host, or canonical tags and the sitemap point at a redirecting domain
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sttlchen/sttlchen.github.io"
@@ -24,7 +24,7 @@ author:
   avatar           : "MSS.jpg"
   name             : "Steven Tianle Chen <br> (陈天乐)"
   pronouns         : "He/Him/His"  
-  bio              : "M.S. Statistical Science@Duke <br> B.S. Math&Stats@UW-Madison"
+  bio              : "M.S. Statistical Science@Duke <br> B.S. Math &amp; Stats@UW–Madison"
   location         : "Durham, NC"
   employer         : "Duke University"
   uri              : # URL

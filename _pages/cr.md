@@ -2,6 +2,7 @@
 layout: archive
 title: "Relevant Coursework"
 permalink: /cr/
+description: "Graduate coursework at Duke University and undergraduate coursework in mathematics, statistics, and computer science at UW–Madison."
 author_profile: true
 ---
 
@@ -25,7 +26,7 @@ author_profile: true
 - STA 640: Causal Inference
 - STA 663L: Statistical Computing
 
-## Undergraduate Coursework at UW-Madison
+## Undergraduate Coursework at UW–Madison
 
 ### Mathematics
 

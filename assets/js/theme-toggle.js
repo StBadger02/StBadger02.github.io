@@ -48,27 +48,36 @@ window.addEventListener('resize', function () { setTimeout(fixMobileNav, 200); }
 (function () {
   var btn  = document.getElementById('theme-toggle');
   var root = document.documentElement;
+  var mql  = window.matchMedia('(prefers-color-scheme: dark)');
 
-  function currentTheme() {
-    var saved = localStorage.getItem('theme');
-    if (saved) return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+  function savedTheme()   { return localStorage.getItem('theme'); }
+  function systemTheme()  { return mql.matches ? 'dark' : 'light'; }
+  function currentTheme() { return savedTheme() || systemTheme(); }
 
-  function applyTheme(theme) {
+  // Paint only. Writing to localStorage here is what used to pin the theme to
+  // whatever the OS happened to be on the very first visit, after which
+  // [data-theme] outranked the prefers-color-scheme rules in _dark-mode.scss
+  // and the site stopped following the OS forever.
+  function paint(theme) {
     root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
     if (btn) {
       var icon = btn.querySelector('i');
       if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
   }
 
-  applyTheme(currentTheme());
+  paint(currentTheme());
 
   if (btn) {
     btn.addEventListener('click', function () {
-      applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next); // persist an explicit choice only
+      paint(next);
     });
   }
+
+  // Keep following the OS until the visitor actually picks a side.
+  function onSystemChange() { if (!savedTheme()) paint(systemTheme()); }
+  if (mql.addEventListener)   mql.addEventListener('change', onSystemChange);
+  else if (mql.addListener)   mql.addListener(onSystemChange); // Safari < 14
 })();
