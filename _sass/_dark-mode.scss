@@ -76,7 +76,14 @@
   }
 
   /* Sidebar */
-  .sidebar { background: #0f1117; }
+  // No background here on purpose. Above $sidebar-screen-min-width the sidebar is
+  // position:fixed with a susy percentage width, and a fixed box resolves that
+  // percentage against the viewport rather than against #main (which is capped at
+  // $x-large and centred). At wide windows that makes it a few px wider than its
+  // column, so it overlaps the left edge of .page. While it is transparent — as in
+  // light mode — the overlap is invisible; giving it an opaque fill made it paint
+  // over the first character of every paragraph and h2. body already supplies this
+  // exact colour behind it, so there is nothing to gain by repeating it here.
 
   .author__name { color: #e6edf3; }
 
