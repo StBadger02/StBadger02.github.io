@@ -17,5 +17,7 @@ main:
   - title: "Courses"
     url: /cr/
 
+  # Stable URL on purpose: overwrite files/cv.pdf when the CV changes, never rename it.
+  # Dated filenames created a new 404 in Search Console with every update.
   - title: "CV"
-    url: '/files/CV-Tianle%20Chen-26.6.pdf'
+    url: /files/cv.pdf

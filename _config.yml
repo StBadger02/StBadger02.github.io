@@ -12,7 +12,7 @@ title                    : "Steven Tianle Chen"
 title_separator          : "-"
 name                     : &name "Steven Tianle Chen <br> (陈天乐)"
 description              : &description "M.S. Statistical Science@Duke <br> B.S. Math&Stats@UW-Madison"
-url                      : https://sttlchen.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://www.sttlchen.com # must match the CNAME host, or canonical tags and the sitemap point at a redirecting domain
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sttlchen/sttlchen.github.io"
 
@@ -269,6 +269,15 @@ defaults:
       layout: single
       author_profile: true
       share: true
+  # Superseded CV filenames. The file stays live so links already shared elsewhere
+  # keep working, but it is kept out of sitemap.xml so Google is not invited to
+  # index a second copy of /files/cv.pdf.
+  # No `type:` here on purpose - Jekyll's StaticFile#type is nil for files outside
+  # a collection, so a `type: files` scope would never match.
+  - scope:
+      path: "files/CV-Tianle Chen-26.6.pdf"
+    values:
+      sitemap: false
 
 # Sass/SCSS
 sass:
@@ -288,6 +297,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-sitemap
   - jemoji
 
@@ -296,6 +306,7 @@ whitelist:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-sitemap
   - jemoji
 

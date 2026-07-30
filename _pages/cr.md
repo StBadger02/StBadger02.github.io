@@ -3,8 +3,6 @@ layout: archive
 title: "Relevant Coursework"
 permalink: /cr/
 author_profile: true
-redirect_from:
-- /cr
 ---
 
 {% include base_path %}
